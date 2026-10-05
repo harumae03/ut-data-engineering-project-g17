@@ -1,4 +1,4 @@
--- Project 1, Group 17: demo queries in pseudocode (simplified version of 03_demo_queries.sql)
+-- Project 1, Group 17: demo queries in pseudocode
 -- Sector of a fact = sector of the DimCompany row the fact points to.
 
 -- Q1. Which sectors depend the most on public procurement? (KPI 1)
@@ -24,7 +24,7 @@ GROUP BY sector, year, quarter
 
 -- Q3. Are procurements won by companies with no employees or no prior activity? (KPI 3)
 FOR EACH contract IN FactProcurement:
-    employees_at_award = winner's employee_count in FactCompany in the award quarter
+    employees_at_award = winner's' employee_count in FactCompany in the award quarter
     prior_activity     = winner has a quarter with revenue > 0 before the award
     is_anomalous       = employees_at_award = 0 OR NOT prior_activity
 SELECT sector,
